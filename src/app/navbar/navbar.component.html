@@ -1,0 +1,89 @@
+<nav class="bg-orange-600 text-white shadow-md font-montserrat">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="hidden lg:flex items-center">
+        <a routerLink="/" class="text-xl font-bold">Felipe Gregório</a>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          <a 
+            routerLink="/" 
+            routerLinkActive="text-orange-300" 
+            [routerLinkActiveOptions]="{exact: true}"
+            class="px-3 py-2 rounded-md text-sm font-medium hover:text-orange-300 transition-colors">
+            Home
+          </a>
+          <a 
+            routerLink="/portfolio" 
+            routerLinkActive="text-orange-300"
+            class="px-3 py-2 rounded-md text-sm font-medium hover:text-orange-300 transition-colors">
+            Projects
+          </a>
+          <a 
+            routerLink="/about" 
+            routerLinkActive="text-orange-300"
+            class="px-3 py-2 rounded-md text-sm font-medium hover:text-orange-300 transition-colors">
+            About
+          </a>
+        </div>
+      </div>
+      <div class="md:hidden">
+        <!-- Mobile menu button -->
+        <button 
+          (click)="isMenuOpen = !isMenuOpen" 
+          class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-orange-300 focus:outline-none"
+        >
+          <!-- Icon when menu is closed -->
+          <svg 
+            *ngIf="!isMenuOpen"
+            class="h-6 w-6" 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor" 
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Icon when menu is open -->
+          <svg 
+            *ngIf="isMenuOpen"
+            class="h-6 w-6" 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor" 
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state -->
+  <div class="md:hidden" [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a 
+        routerLink="/" 
+        routerLinkActive="bg-nandor-700 text-white" 
+        [routerLinkActiveOptions]="{exact: true}"
+        class="block px-3 py-2 rounded-md text-base font-medium hover:bg-nandor-700 transition-colors">
+        Home
+      </a>
+      <a 
+        routerLink="/portfolio" 
+        routerLinkActive="bg-nandor-700 text-white"
+        class="block px-3 py-2 rounded-md text-base font-medium hover:bg-nandor-700 transition-colors">
+        Portfolio
+      </a>
+      <a 
+        routerLink="/about" 
+        routerLinkActive="bg-nandor-700 text-white"
+        class="block px-3 py-2 rounded-md text-base font-medium hover:bg-nandor-700 transition-colors">
+        About
+      </a>
+    </div>
+  </div>
+</nav>
