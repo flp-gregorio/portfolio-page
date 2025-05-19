@@ -1,18 +1,20 @@
 <div
   class="flex flex-row items-center justify-center min-h-fit lg:min-h-screen lg:overflow-hidden bg-slate-100"
 >
+  <!-- Background and Container -->
   <div class="container lg:w-10/12 lg:h-3/4 lg:bg-gray-600 lg:my-auto p-5">
+    <!-- Content -->
     <div class="flex flex-row h-full">
       <!-- Profile Photo Section -->
-      <div class="w-1/2 hidden lg:flex items-center justify-center">
-        <div class="relative lg:w-96 lg:h-96 overflow-hidden shadow-xl">
-          <!-- Replace this URL with your actual LinkedIn profile photo URL -->
-          <img
-            src="https://avatars.githubusercontent.com/u/113314823?v=4"
-            alt="Felipe Gregorio"
-            class="w-full h-full object-fill transition-all duration-300 hover:scale-105"
-          />
-        </div>
+      <div
+        class="w-1/2 hidden lg:flex items-center justify-center overflow-hidden m-5"
+      >
+        <!-- Replace this URL with your actual LinkedIn profile photo URL -->
+        <img
+          src="https://avatars.githubusercontent.com/u/113314823?v=4"
+          alt="Felipe Gregorio"
+          class="w-full h-full object-fill transition-all duration-300 hover:scale-105"
+        />
       </div>
 
       <!-- Text Content Section -->
@@ -37,7 +39,7 @@
           Skills & Technologies
         </h3>
         <div
-          class="grid lg:grid-cols-6 lg:grid-rows-2 grid-cols-4 grid-rows-3 gap-2 max-sm:mx-auto"
+          class="flex flex-wrap gap-4 items-center justify-center lg:justify-start "
         >
           <!-- Frontend -->
           <div
@@ -139,7 +141,9 @@
             </div>
           </div>
           <div class="container mt-10">
-            <div class="flex w-fit mx-auto text-s text-nowrap gap-5 content-stretch">
+            <div
+              class="flex w-fit mx-auto text-s text-nowrap gap-5 content-stretch"
+            >
               <a
                 href="mailto:felipealvesgregorio01@gmail.com"
                 class="flex items-center p-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
