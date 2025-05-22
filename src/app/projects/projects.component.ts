@@ -5,7 +5,7 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
 
 @Component({
   selector: 'app-projects',
-  imports: [ProjectCardComponent, NgIcon],
+  imports: [],
   providers: [provideIcons({ boxGame })],
   standalone: true,
   templateUrl: './projects.component.html',

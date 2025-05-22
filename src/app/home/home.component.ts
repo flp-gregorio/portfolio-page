@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgIcon, provideIcons } from '@ng-icons/core';
+import { RouterModule } from '@angular/router';
 import {
   boxAngularLogo,
   boxReactLogo,
@@ -17,7 +18,7 @@ import {
 
 @Component({
   selector: 'app-home',
-  imports: [NgIcon],
+  imports: [NgIcon, RouterModule],
   standalone: true,
   providers: [
     provideIcons({
@@ -39,5 +40,13 @@ import {
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  title = 'Home';
+  title = 'Home';playVideo(event: MouseEvent): void {
+    const video = event.target as HTMLVideoElement;
+    video.play();
+  }
+
+  pauseVideo(event: MouseEvent): void {
+    const video = event.target as HTMLVideoElement;
+    video.pause();
+  }
 }

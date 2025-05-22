@@ -1,111 +1,36 @@
-<div class="min-h-screen bg-slate-100 py-16">
-  <div class="container mx-auto px-4">
-    <h1
-      class="text-5xl font-bold text-orange-600 text-center mb-10 font-montserrat"
-    >
-      My Projects
-    </h1>
+<div class="min-h-screen bg-black">
+  <header class="py-6 px-8 border-b border-white transition-all duration-300">
+    <div class="flex items-center justify-between">
+      <a href="/">
+        <!-- Navigation toggle button -->
+        <div class="h-9 w-9 group cursor-pointer overflow-hidden relative">
+          <!-- Fill effect background -->
+          <div class="bg-white h-9 w-9 absolute inset-0"></div>
+          <div
+            class="bg-purple-600 h-9 w-9 absolute inset-0 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"
+          ></div>
 
-    <div>
-      <div class="flex items-center mb-8">
-        <div
-          class="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white"
-        >
-          <ng-icon name="boxGame" size="36"></ng-icon>
-        </div>
-        <h2 class="text-3xl font-bold text-orange-600 ml-4 font-montserrat">
-          Game Mods
-        </h2>
-      </div>
-
-      <div class="relative">
-        
-
-        <div class="overflow-x-auto pb-4 pt-4 hide-scrollbar">
-          <div class="flex space-x-6 pl-4 pr-32 min-w-max">
-            <app-project-card
-              [title]="'Moonlight Greatsword and Ludwigs Holy Blade'"
-              [description]="
-                'A mod for Baldurs Gate 3 that brings the legendary Moonlight Greatsword and Ludwigs Holy Blade from the beloved game Bloodborne into the world of Baldurs Gate 3.'
-              "
-              [imageUrl]="
-                'https://staticdelivery.nexusmods.com/mods/3474/images/3174/3174-1697043303-717206539.png'
-              "
-              [projectLink]="'https://www.nexusmods.com/baldursgate3/mods/3174'"
-              [technologies]="[
-                { name: 'Lua', color: 'bg-blue-800', icon: 'bxs-moon' },
-                { name: 'XML', color: 'bg-purple-700', icon: 'bx-code-alt' }
-              ]"
-            ></app-project-card>
-
-            <app-project-card
-              [title]="'Bloodborne Sawcleaver'"
-              [description]="
-                'This mod seamlessly integrates the iconic Bloodborne weapon, the Sawcleaver, into Baldurs Gate 3, adding a fresh combat dynamic with its unique transforming abilities. Immerse yourself in a thrilling cross-genre adventure.'
-              "
-              [imageUrl]="
-                'https://staticdelivery.nexusmods.com/mods/3474/images/3322/3322-1697411770-336074635.png'
-              "
-              [projectLink]="'https://www.nexusmods.com/baldursgate3/mods/3322'"
-              [technologies]="[
-                { name: 'Lua', color: 'bg-blue-800', icon: 'bxs-moon' },
-                { name: 'XML', color: 'bg-purple-700', icon: 'bx-code-alt' }
-              ]"
-            ></app-project-card>
-
-            <app-project-card
-              [title]="'Oath of the Eldritch Hunt - Paladin Subclass'"
-              [description]="
-                'Inspired by Bloodborne and Steinhardts Guide to the Eldritch Hunt, this mod introduces the Oath of the Eldritch Hunt for Paladins, purge Baldurs Gate from the endritch curse that plagues it.'
-              "
-              [imageUrl]="
-                'https://staticdelivery.nexusmods.com/mods/3474/images/13689/13689-1731389118-1580195900.png'
-              "
-              [projectLink]="
-                'https://www.nexusmods.com/baldursgate3/mods/13689'
-              "
-              [technologies]="[
-                { name: 'Lua', color: 'bg-blue-800', icon: 'bxs-moon' },
-                { name: 'XML', color: 'bg-purple-700', icon: 'bx-code-alt' }
-              ]"
-            ></app-project-card>
-
-            <app-project-card
-              [title]="'Blood Archer - Fighter Subclass'"
-              [description]="
-                'Blood Archer introduces a custom archetype for the Fighter class in Baldurs Gate 3. Harness the power of cursed archery and weave blood magic into your arrows to unleash supernatural effects.'
-              "
-              [imageUrl]="
-                'https://staticdelivery.nexusmods.com/mods/3474/images/13864/13864-1731957569-1717819960.png'
-              "
-              [projectLink]="
-                'https://www.nexusmods.com/baldursgate3/mods/13864'
-              "
-              [technologies]="[
-                { name: 'Lua', color: 'bg-blue-800', icon: 'bxs-moon' },
-                { name: 'XML', color: 'bg-purple-700', icon: 'bx-code-alt' }
-              ]"
-            ></app-project-card>
-
-            <app-project-card
-              [title]="'Blade of Radiance - Rogue Subclass'"
-              [description]="
-                'Wield divine power with precision and fervor as a Blade of Radiance, a Rogue subclass that specializes in great weapons, Baldurs Gate will tremble before your faith.'
-              "
-              [imageUrl]="
-                'https://staticdelivery.nexusmods.com/mods/3474/images/14201/14201-1733815587-948085556.png'
-              "
-              [projectLink]="
-                'https://www.nexusmods.com/baldursgate3/mods/14201'
-              "
-              [technologies]="[
-                { name: 'Lua', color: 'bg-blue-800', icon: 'bxs-moon' },
-                { name: 'XML', color: 'bg-purple-700', icon: 'bx-code-alt' }
-              ]"
-            ></app-project-card>
+          <!-- Centered chevron -->
+          <div
+            class="absolute inset-0 right-0 flex items-center justify-center z-10 rotate-180"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-gray-800 group-hover:text-white transition-colors duration-300"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
           </div>
         </div>
-      </div>
+      </a>
     </div>
-  </div>
+  </header>
 </div>

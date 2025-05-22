@@ -1,83 +1,159 @@
-<div class="min-h-screen bg-slate-100">
-  <!-- Header section with photo -->
-  <section class="bg-gray-600 py-20">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-center max-w-5xl mx-auto">
-        <div class="md:w-1/4 mb-8 md:mb-0">
-          <img 
-            src="https://avatars.githubusercontent.com/u/113314823?v=4" 
-            alt="Profile photo" 
-            class="w-48 h-48 rounded-full border-4 border-orange-500 shadow-xl"
+<div class="min-h-screen bg-black text-white flex flex-col">
+  <!-- Navigation - minimal top bar -->
+  <header class="py-6 px-8 border-b border-white transition-all duration-300">
+    <div class="flex items-center justify-between">
+      <a href="/">
+        <!-- Navigation toggle button -->
+        <div class="h-9 w-9 group cursor-pointer overflow-hidden relative">
+          <!-- Fill effect background -->
+          <div class="bg-white h-9 w-9 absolute inset-0"></div>
+          <div
+            class="bg-purple-600 h-9 w-9 absolute inset-0 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"
+          ></div>
+
+          <!-- Centered chevron -->
+          <div
+            class="absolute inset-0 right-0 flex items-center justify-center z-10 rotate-180"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-gray-800 group-hover:text-white transition-colors duration-300"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero section with strong typography -->
+  <section class="py-24 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-start gap-16">
+        <div class="w-1/2">
+          <h1
+            class="text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-4"
+          >
+            FELIPE<br />
+            <span class="text-purple-600">GREGORIO</span>
+          </h1>
+          <h2
+            class="text-2xl md:text-3xl font-light mt-4 tracking-wide text-gray-400"
+          >
+            Full Stack Developer
+          </h2>
+
+          <div class="mt-12 max-w-xl">
+            <p class="text-gray-300 leading-relaxed">
+              I'm a Computer Science student from Brazil with a passion for
+              software development, gaming, and creative technologies. My
+              journey in programming began when I started modding games as a
+              hobby, which eventually led me to pursue a formal education in
+              computer science.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="w-1/2 h-full flex justify-center md:justify-end my-auto scale-200"
+        >
+          <img
+            src="https://avatars.githubusercontent.com/u/113314823?v=4"
+            alt="Profile photo"
+            class="w-64 h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500"
           />
         </div>
-        <div class="md:w-3/4 md:pl-12">
-          <h1 class="text-5xl font-bold text-orange-500 mb-3 font-montserrat">About Me</h1>
-          <h2 class="text-2xl text-white mb-6">Full Stack Developer</h2>
-          <p class="text-white text-lg leading-relaxed max-w-3xl">
-            I'm a Computer Science student from Brazil with a passion for software development, gaming, 
-            and creative technologies. My journey in programming began when I started modding games as a hobby, 
-            which eventually led me to pursue a formal education in computer science.
-          </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Background section with strong typography and minimal design -->
+  <section class="py-24 px-8 border-t border-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-16">
+        <div class="md:w-1/3">
+          <h2 class="text-xl font-semibold tracking-wider text-gray-400">
+            / MY BACKGROUND
+          </h2>
+        </div>
+        <div class="md:w-2/3">
+          <div class="mb-16">
+            <p class="text-gray-300 mb-6 leading-relaxed">
+              With experience in both frontend and backend development, I enjoy
+              creating applications that combine functionality with intuitive
+              design. I'm particularly interested in game development, web
+              technologies, and creating tools that enhance user experiences.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+              I approach each project with a focus on clean code, performance
+              optimization, and user-centered design principles. Whether I'm
+              building web applications or creating game mods, I strive to
+              deliver solutions that are both technically sound and enjoyable to
+              use.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Background section -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-gray-800 mb-8 font-montserrat">My Background</h2>
-        <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-          With experience in both frontend and backend development, I enjoy creating applications that 
-          combine functionality with intuitive design. I'm particularly interested in game development, 
-          web technologies, and creating tools that enhance user experiences.
-        </p>
-        <p class="text-gray-700 text-lg leading-relaxed">
-          I approach each project with a focus on clean code, performance optimization, and user-centered 
-          design principles. Whether I'm building web applications or creating game mods, I strive to 
-          deliver solutions that are both technically sound and enjoyable to use.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education section -->
-  <section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-6">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-gray-800 mb-8 font-montserrat">Education</h2>
-        <div class="flex flex-col md:flex-row">
-          <div class="md:w-1/3">
-            <h3 class="text-xl font-semibold text-orange-600">Bachelor of Computer Science</h3>
-            <p class="text-gray-600">Universidade Federal de Itajubá • 2020 - 2025</p>
-          </div>
-          <div class="md:w-2/3 mt-4 md:mt-0">
-            <h4 class="text-lg font-medium text-gray-700 mb-3">Key Coursework</h4>
-            <div class="grid grid-cols-2 gap-2">
-              <div class="flex items-center">
-                <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
-                <span class="text-gray-700">Data Structures</span>
-              </div>
-              <div class="flex items-center">
-                <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
-                <span class="text-gray-700">Algorithms</span>
-              </div>
-              <div class="flex items-center">
-                <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
-                <span class="text-gray-700">Web Development</span>
-              </div>
-              <div class="flex items-center">
-                <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
-                <span class="text-gray-700">Database Systems</span>
-              </div>
-              <div class="flex items-center">
-                <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
-                <span class="text-gray-700">Software Engineering</span>
-              </div>
-              <div class="flex items-center">
-                <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
-                <span class="text-gray-700">Computer Graphics</span>
+  <!-- Education with minimal design -->
+  <section class="py-24 px-8 border-t border-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-16">
+        <div class="md:w-1/3">
+          <h2 class="text-xl font-semibold tracking-wider text-gray-400">
+            / EDUCATION
+          </h2>
+        </div>
+        <div class="md:w-2/3">
+          <div class="flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2">
+              <h3 class="text-xl font-semibold text-white mb-1">
+                Bachelor of Computer Science
+              </h3>
+              <p class="text-purple-600 mb-4">
+                Universidade Federal de Itajubá • 2020 - 2025
+              </p>
+            </div>
+            <div class="md:w-1/2">
+              <h4 class="text-lg font-medium text-white mb-6">
+                Key Coursework
+              </h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-center">
+                  <span class="text-gray-400 mr-2">—</span>
+                  <span class="text-gray-300">Data Structures</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-gray-400 mr-2">—</span>
+                  <span class="text-gray-300">Algorithms</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-gray-400 mr-2">—</span>
+                  <span class="text-gray-300">Web Development</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-gray-400 mr-2">—</span>
+                  <span class="text-gray-300">Database Systems</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-gray-400 mr-2">—</span>
+                  <span class="text-gray-300">Software Engineering</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-gray-400 mr-2">—</span>
+                  <span class="text-gray-300">Computer Graphics</span>
+                </div>
               </div>
             </div>
           </div>
@@ -86,65 +162,167 @@
     </div>
   </section>
 
-  <!-- Interests section -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-gray-800 mb-8 font-montserrat">Professional Interests</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-          <div class="p-4 border-l-4 border-orange-500 bg-gray-50">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2">Game Development</h3>
-            <p class="text-gray-600">Creating interactive experiences and gameplay mechanics</p>
-          </div>
-          <div class="p-4 border-l-4 border-orange-500 bg-gray-50">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2">Game Modding</h3>
-            <p class="text-gray-600">Extending and enhancing existing games with custom content</p>
-          </div>
-          <div class="p-4 border-l-4 border-orange-500 bg-gray-50">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2">Web Development</h3>
-            <p class="text-gray-600">Building responsive, interactive web applications</p>
-          </div>
-          <div class="p-4 border-l-4 border-orange-500 bg-gray-50">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2">Photography</h3>
-            <p class="text-gray-600">Capturing moments and creating visual stories</p>
-          </div>
-          <div class="p-4 border-l-4 border-orange-500 bg-gray-50">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2">UI/UX Design</h3>
-            <p class="text-gray-600">Crafting intuitive and visually appealing interfaces</p>
-          </div>
-          <div class="p-4 border-l-4 border-orange-500 bg-gray-50">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2">Open Source</h3>
-            <p class="text-gray-600">Contributing to and building community-driven projects</p>
+  <!-- Professional Interests with grid layout -->
+  <section class="py-24 px-8 border-t border-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-16">
+        <div class="md:w-1/3">
+          <h2 class="text-xl font-semibold tracking-wider text-gray-400">
+            / PROFESSIONAL INTERESTS
+          </h2>
+        </div>
+        <div class="md:w-2/3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="border-t border-purple-600 pt-6 pr-8">
+              <h3 class="text-xl font-semibold text-white mb-3">
+                Game Development
+              </h3>
+              <p class="text-gray-300">
+                Creating interactive experiences and gameplay mechanics
+              </p>
+            </div>
+            <div class="border-t border-purple-600 pt-6 pr-8">
+              <h3 class="text-xl font-semibold text-white mb-3">
+                Game Modding
+              </h3>
+              <p class="text-gray-300">
+                Extending and enhancing existing games with custom content
+              </p>
+            </div>
+            <div class="border-t border-purple-600 pt-6 pr-8">
+              <h3 class="text-xl font-semibold text-white mb-3">
+                Web Development
+              </h3>
+              <p class="text-gray-300">
+                Building responsive, interactive web applications
+              </p>
+            </div>
+            <div class="border-t border-purple-600 pt-6 pr-8">
+              <h3 class="text-xl font-semibold text-white mb-3">Photography</h3>
+              <p class="text-gray-300">
+                Capturing moments and creating visual stories
+              </p>
+            </div>
+            <div class="border-t border-purple-600 pt-6 pr-8">
+              <h3 class="text-xl font-semibold text-white mb-3">
+                UI/UX Design
+              </h3>
+              <p class="text-gray-300">
+                Crafting intuitive and visually appealing interfaces
+              </p>
+            </div>
+            <div class="border-t border-purple-600 pt-6 pr-8">
+              <h3 class="text-xl font-semibold text-white mb-3">Open Source</h3>
+              <p class="text-gray-300">
+                Contributing to and building community-driven projects
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact section -->
-  <section class="py-16 bg-gray-600">
-    <div class="container mx-auto px-6">
-      <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-white mb-8 font-montserrat">Get In Touch</h2>
-        <div class="flex flex-wrap justify-center gap-6">
-          <a href="mailto:youremail&#64;domain.com" class="flex items-center px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors">
-            <span class="mr-2">📥</span>
-            <span>felipealvesgregorio01&#64;gmail.com</span>
-          </a>
-          <a href="https://github.com/flp-gregorio" target="_blank" class="flex items-center px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors">
-            <span class="mr-2">🔗</span>
-            <span>GitHub</span>
-          </a>
-          <a href="https://www.linkedin.com/in/felipe-gregorio-85bb4b1a2/" target="_blank" class="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-            <span class="mr-2">🔗</span>
-            <span>LinkedIn</span>
-          </a>
-          <a href="https://next.nexusmods.com/profile/Nevaty" target="_blank" class="flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-            <span class="mr-2">🎮</span>
-            <span>Nexus Mods</span>
-          </a>
+  <!-- Contact section with minimal design -->
+  <section id="contact" class="py-24 px-8 border-t border-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-16">
+        <div class="md:w-1/3">
+          <h2 class="text-xl font-semibold tracking-wider text-gray-400">
+            / GET IN TOUCH
+          </h2>
+        </div>
+        <div class="md:w-2/3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a
+              href="mailto:felipealvesgregorio01&#64;gmail.com"
+              class="border-t border-purple-600 pt-6 pr-8 group"
+            >
+              <h3
+                class="text-xl font-semibold text-white mb-2 flex items-center"
+              >
+                <span>Email</span>
+                <span
+                  class="ml-2 opacity-0 group-hover:opacity-100 transition-opacity inline-block transform group-hover:translate-x-1"
+                  >→</span
+                >
+              </h3>
+              <p class="text-gray-400">felipealvesgregorio01&#64;gmail.com</p>
+            </a>
+            <a
+              href="https://github.com/flp-gregorio"
+              target="_blank"
+              class="border-t border-purple-600 pt-6 pr-8 group"
+            >
+              <h3
+                class="text-xl font-semibold text-white mb-2 flex items-center"
+              >
+                <span>GitHub</span>
+                <span
+                  class="ml-2 opacity-0 group-hover:opacity-100 transition-opacity inline-block transform group-hover:translate-x-1"
+                  >→</span
+                >
+              </h3>
+              <p class="text-gray-400">flp-gregorio</p>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/felipe-gregorio-85bb4b1a2/"
+              target="_blank"
+              class="border-t border-purple-600 pt-6 pr-8 group"
+            >
+              <h3
+                class="text-xl font-semibold text-white mb-2 flex items-center"
+              >
+                <span>LinkedIn</span>
+                <span
+                  class="ml-2 opacity-0 group-hover:opacity-100 transition-opacity inline-block transform group-hover:translate-x-1"
+                  >→</span
+                >
+              </h3>
+              <p class="text-gray-400">felipe-gregorio</p>
+            </a>
+            <a
+              href="https://next.nexusmods.com/profile/Nevaty"
+              target="_blank"
+              class="border-t border-purple-600 pt-6 pr-8 group"
+            >
+              <h3
+                class="text-xl font-semibold text-white mb-2 flex items-center"
+              >
+                <span>Nexus Mods</span>
+                <span
+                  class="ml-2 opacity-0 group-hover:opacity-100 transition-opacity inline-block transform group-hover:translate-x-1"
+                  >→</span
+                >
+              </h3>
+              <p class="text-gray-400">Nevaty</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Footer with copyright -->
+  <footer class="mt-auto py-8 px-8 border-t border-white">
+    <div
+      class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start"
+    >
+      <div class="text-gray-400 text-xs font-medium mb-6 md:mb-0">
+        © 2001-2025<br />
+        COPYRIGHT © 2025 ALL RIGHTS RESERVED
+      </div>
+      <div class="flex gap-6">
+        <a href="/" class="text-gray-400 hover:text-white transition-colors"
+          >Home</a
+        >
+        <a
+          href="/projects"
+          class="text-gray-400 hover:text-white transition-colors"
+          >Projects</a
+        >
+        <a href="/about" class="text-white">About</a>
+      </div>
+    </div>
+  </footer>
 </div>
