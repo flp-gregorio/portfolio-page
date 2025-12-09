@@ -30,6 +30,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   @ViewChild('sidebarContent') sidebarContent!: ElementRef;
   @ViewChild('projectsContent') projectsContent!: ElementRef;
 
+  private mm: gsap.MatchMedia | null = null;
   private timeline: gsap.core.Timeline | null = null;
   private isBrowser: boolean;
 
@@ -45,6 +46,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     if (!this.isBrowser) return;
 
     gsap.registerPlugin(ScrollTrigger);
+    this.mm = gsap.matchMedia();
 
     setTimeout(() => {
       this.initAnimations();
@@ -53,54 +55,76 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   private initAnimations(): void {
+    // Initial States
     gsap.set(this.sidebarContent.nativeElement, { opacity: 0, y: 50 });
     gsap.set(this.projectsContent.nativeElement, { opacity: 0, x: 50 });
 
-    this.timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: this.mainWrapper.nativeElement,
-        start: 'top top',
-        end: '+=2000',
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1
+    this.mm?.add(
+      {
+        isDesktop: '(min-width: 768px)',
+        isMobile: '(max-width: 767px)',
+      },
+      (context) => {
+        let { isMobile } = context.conditions as { isMobile: boolean };
+
+        this.timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: this.mainWrapper.nativeElement,
+            start: 'top top',
+            end: '+=2000',
+            scrub: 1,
+            pin: true,
+            anticipatePin: 1,
+          },
+        });
+
+        const targetFontSize = isMobile ? '3rem' : '6rem';
+        const targetTop = isMobile ? '5%' : '2rem';
+        const targetLeft = isMobile ? '5%' : '2rem';
+
+        this.timeline
+          .to(
+            [this.felipeText.nativeElement, this.gregorioText.nativeElement],
+            {
+              fontSize: targetFontSize,
+              duration: 2,
+              ease: 'power2.inOut',
+            },
+            0
+          )
+          .to(
+            this.heroTextContainer.nativeElement,
+            {
+              top: targetTop,
+              left: targetLeft,
+              xPercent: 0,
+              yPercent: 0,
+              x: 0,
+              y: 0,
+              duration: 2,
+              ease: 'power2.inOut',
+            },
+            0
+          )
+
+          .to(
+            this.sidebarContent.nativeElement,
+            { opacity: 1, y: 0, duration: 1, ease: 'power2.out' },
+            1
+          )
+          .to(
+            this.projectsContent.nativeElement,
+            { opacity: 1, x: 0, duration: 1.5, ease: 'power2.out' },
+            1.2
+          );
       }
-    });
-
-    const isMobile = window.innerWidth < 768;
-    const targetFontSize = isMobile ? '3rem' : '6rem';
-
-    this.timeline
-      .to([this.felipeText.nativeElement, this.gregorioText.nativeElement], {
-        fontSize: targetFontSize,
-        duration: 2,
-        ease: 'power2.inOut'
-      }, 0)
-      .to(this.heroTextContainer.nativeElement, {
-        top: '2rem',
-        left: '2rem',
-        xPercent: 0,
-        yPercent: 0,
-        x: 0,
-        y: 0,
-        duration: 2,
-        ease: 'power2.inOut'
-      }, 0)
-
-      .to(this.sidebarContent.nativeElement,
-        { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, 1
-      )
-      .to(this.projectsContent.nativeElement,
-        { opacity: 1, x: 0, duration: 1.5, ease: 'power2.out' }, 1.2
-      );
+    );
   }
 
   ngOnDestroy(): void {
     if (this.isBrowser) {
-      if (this.timeline) {
-        this.timeline.kill();
-      }
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      this.mm?.revert();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     }
   }
 }
