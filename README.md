@@ -1,59 +1,63 @@
-# PortfolioPage
+# Felipe Gregorio - Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+A premium, responsive portfolio website built with **Angular 19**, designed to showcase projects and skills with extensive use of animations and modern aesthetics.
 
-## Development server
+## Tech Stack
 
-To start a local development server, run:
+- **Framework**: Angular 19 (Standalone Components)
+- **Styling**: Tailwind CSS
+- **Animations**: GSAP (GreenSock Animation Platform) + ScrollTrigger
+- **Icons**: NgIcons (BoxIcons)
+
+## Features
+
+- **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile devices.
+- **Interactive Animations**:
+  - Scroll-driven text transformations using GSAP ScrollTrigger.
+  - Smooth reveal animations for content.
+  - Glassmorphism effects and hover transitions.
+- **Project Showcase**:
+  - Featured projects with large visual previews.
+  - "Lab & Mods" section for smaller experiments.
+  - Detailed modal view for deep dives into specific projects.
+- **Premium Aesthetic**: Dark mode interface with curated typography and color palette.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (Latest LTS recommended)
+- Angular CLI
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development Server
+
+Run the development server:
 
 ```bash
 ng serve
 ```
+Navigate to `http://localhost:4200/`. The app will reload automatically if you change any of the source files.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Build
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+To build the project for production:
 
 ```bash
 ng build
 ```
+The build artifacts will be stored in the `dist/` directory.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## License
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+All rights reserved. © 2025 Felipe Gregorio.
