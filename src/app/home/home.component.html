@@ -1,157 +1,78 @@
-<div class="h-screen flex justify-between bg-black p-5">
-  <!-- Left section -->
-  <div class="text-left flex flex-col justify-between py-6 px-20">
-    <div>
-      <h1 class="text-9xl font-bold text-white pb-5">Felipe Gregorio</h1>
-      <div class="flex flex-col gap-y-5 mt-8">
-        <button>
-          <a
-            [routerLink]="['/projects']"
-            class="block bg-transparent text-white font-thin border-white border-1 py-2 px-10 rounded-none text-center w-56"
-            >Projects</a
-          >
-        </button>
-        <button>
-          <a
-            [routerLink]="['/about']"
-            class="block bg-transparent text-white font-thin border-white border-1 py-2 px-10 rounded-none text-center w-56"
-            >About</a
-          >
-        </button>
-      </div>
+<div *ngIf="isLoading" class="fixed inset-0 z-[100] bg-black flex items-center justify-center pointer-events-none">
+    <div class="flex flex-col items-center gap-4">
+        <h1 class="font-black text-white text-4xl animate-pulse tracking-tighter">FG.</h1>
+        <div class="w-12 h-[2px] bg-purple-500 animate-slide-up"></div>
+    </div>
+</div>
+
+<div #mainWrapper class="h-screen w-full bg-black relative overflow-hidden" [style.visibility]="isLoading ? 'hidden' : 'visible'" [style.opacity]="isLoading ? 0 : 1">
+    
+    <div #heroTextContainer class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left z-50 pointer-events-auto">
+        <h1 #felipeText class="font-black text-white uppercase leading-[0.85] tracking-tighter text-[15vw] whitespace-nowrap">
+            FELIPE
+        </h1>
+        <h1 #gregorioText class="font-black text-transparent uppercase leading-[0.85] tracking-tighter text-[15vw] whitespace-nowrap" style="-webkit-text-stroke: 1px white;">
+            GREGORIO
+        </h1>
     </div>
 
-    <!-- Copyright text -->
-    <div
-      class="text-white text-xs font-bold -rotate-90 origin-bottom-left bottom-0 text-left"
-    >
-      <p>© 2010-2025</p>
-      <p>COPYRIGHT © 2025 ALL RIGHTS RESERVED</p>
+    <div #sidebarContent class="absolute bottom-0 md:top-0 left-0 w-full md:w-1/3 h-1/2 md:h-full pb-8 md:pt-48 md:pb-12 pl-6 md:pl-20 pr-6 md:pr-0 flex flex-col justify-center md:justify-center gap-8 pointer-events-auto opacity-0" style="transform: translateY(50px);">
+        <div class="flex flex-col gap-y-3">
+            <button class="w-full md:w-64 group">
+            <a
+                [routerLink]="['/projects']"
+                class="block bg-transparent text-white font-bold border border-gray-800 py-4 md:py-5 px-6 text-left relative overflow-hidden transition-all duration-300 group-hover:border-purple-500 group-hover:text-black"
+                >
+                <div class="absolute inset-0 bg-purple-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
+                <span class="relative z-10 flex justify-between items-center text-base md:text-lg tracking-wider">
+                PROJECTS
+                <ng-icon name="boxGitLogo" class="opacity-0 group-hover:opacity-100 transition-opacity duration-300"></ng-icon>
+                </span>
+            </a>
+            </button>
+            <button class="w-full md:w-64 group">
+            <a
+                [routerLink]="['/about']"
+                class="block bg-transparent text-white font-bold border border-gray-800 py-4 md:py-5 px-6 text-left relative overflow-hidden transition-all duration-300 group-hover:border-white group-hover:text-black"
+                >
+                <div class="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
+                <span class="relative z-10 flex justify-between items-center text-base md:text-lg tracking-wider">
+                ABOUT ME
+                <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+            </a>
+            </button>
+        </div>
+
+        <div class="hidden md:block text-white text-[10px] font-bold -rotate-90 origin-bottom-left absolute bottom-8 left-8 z-50 opacity-40 whitespace-nowrap tracking-[0.2em] leading-relaxed">
+            <p>© 2010-2025</p>
+            <p>COPYRIGHT © 2025 ALL RIGHTS RESERVED</p>
+        </div>
     </div>
-  </div>
 
-  <!-- Right section with projects organized in columns -->
-  <div class="flex items-end justify-end py-6 pr-30 text-black">
-    <div class="flex flex-row gap-x-5">
-      <!-- PROJECT ONE COLUMN -->
-      <div class="flex flex-col gap-4">
-        <!-- Tech stack icons -->
-        <div class="bg-white flex items-center justify-center h-24 w-24 mr-auto">
-          <ng-icon name="boxAngularLogo" size="72"></ng-icon>
-        </div>
-        <div class="bg-white flex items-center justify-center h-24 w-24 mr-auto">
-          <ng-icon name="boxTypescriptLogo" size="72"></ng-icon>
-        </div>
-        <div class="bg-white flex items-center justify-center h-24 w-24 mr-auto">
-          <ng-icon name="boxTailwindCssLogo" size="72"></ng-icon>
-        </div>
+    <div #projectsContent class="absolute top-0 right-0 w-full md:w-2/3 h-[50%] md:h-full pt-32 md:pt-32 pb-4 md:pb-12 px-6 md:px-8 flex flex-col justify-end md:justify-center pointer-events-auto opacity-0 z-40" style="transform: translateX(50px);">
+        <h2 class="text-white/50 font-bold tracking-widest text-xs mb-4 md:mb-8 uppercase">Selected Works</h2>
+        <div class="grid grid-cols-1 gap-4 md:gap-6 max-w-2xl">
+            <a *ngFor="let project of projects" 
+               [routerLink]="['/projects']" 
+               class="group relative flex items-center justify-between p-4 md:p-6 border border-white/10 hover:border-purple-500 bg-black/40 backdrop-blur-sm transition-all duration-300 cursor-pointer">
+                
+                <div class="absolute inset-0 bg-white/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
-        <!-- Project One Preview - horizontal expansion -->
-        <div
-          class="relative h-48 w-24 cursor-pointer group border border-white transition-all duration-300 ease-in-out hover:w-44"
-        >
-          <!-- Static preview image -->
-          <div
-            class="h-full w-full bg-black flex items-center justify-center text-white"
-          >
-            <p class="text-lg font-thin">Project One</p>
-          </div>
+                <div class="relative z-10 flex items-center gap-4 md:gap-6">
+                    <span class="text-xs font-bold text-purple-500">0{{ projects.indexOf(project) + 1 }}</span>
+                    <h3 class="text-lg md:text-2xl font-bold text-white group-hover:translate-x-2 transition-transform">{{ project.name }}</h3>
+                </div>
 
-          <!-- Video that appears on hover -->
-          <video
-            class="absolute top-0 left-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            src="assets/projects/project1.mp4"
-            muted
-            loop
-            (mouseenter)="playVideo($event)"
-            (mouseleave)="pauseVideo($event)"
-          ></video>
+                <div class="relative z-10 opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-4 group-hover:translate-x-0">
+                    <span class="text-purple-500 text-lg md:text-2xl">→</span>
+                </div>
+            </a>
+            
+             <a [routerLink]="['/projects']" class="text-gray-500 hover:text-white text-xs md:text-sm font-bold tracking-widest mt-2 md:mt-4 flex items-center gap-2 group w-fit">
+                VIEW ALL PROJECTS
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
         </div>
-      </div>
-
-      <!-- PROJECT TWO COLUMN -->
-      <div class="flex flex-col gap-4">
-        <!-- Tech stack icons -->
-        <div
-          class="bg-white flex items-center justify-center h-24 w-24 border mr-auto"
-        >
-          <ng-icon name="boxReactLogo" size="72"></ng-icon>
-        </div>
-        <div
-          class="bg-white flex items-center justify-center h-24 w-24 border mr-auto"
-        >
-          <ng-icon name="boxJavascriptLogo" size="72"></ng-icon>
-        </div>
-        <div
-          class="bg-white flex items-center justify-center h-24 w-24 border mr-auto"
-        >
-          <ng-icon name="boxNodejsLogo" size="72"></ng-icon>
-        </div>
-
-        <!-- Project Two Preview - horizontal expansion (changed from vertical) -->
-        <div
-          class="relative overflow-hidden h-48 w-24 cursor-pointer group border border-white transition-all duration-300 ease-in-out hover:w-44"
-        >
-          <!-- Static preview image -->
-          <div
-            class="h-full w-full bg-black flex items-center justify-center text-white"
-          >
-            <p class="text-lg font-thin">Project Two</p>
-          </div>
-
-          <!-- Video that appears on hover -->
-          <video
-            class="absolute top-0 left-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            src="assets/projects/project2.mp4"
-            muted
-            loop
-            (mouseenter)="playVideo($event)"
-            (mouseleave)="pauseVideo($event)"
-          ></video>
-        </div>
-      </div>
-
-      <!-- PROJECT THREE COLUMN -->
-      <div class="flex flex-col gap-4">
-        <!-- Tech stack icons -->
-        <div
-          class="bg-white flex items-center justify-center h-24 w-24 border mr-auto"
-        >
-          <ng-icon name="boxUnityLogo" size="72"></ng-icon>
-        </div>
-        <div
-          class="bg-white flex items-center justify-center h-24 w-24 border mr-auto"
-        >
-          <ng-icon name="boxJavaLogo" size="72"></ng-icon>
-        </div>
-        <div
-          class="bg-white flex items-center justify-center h-24 w-24 border mr-auto"
-        >
-          <ng-icon name="boxPythonLogo" size="72"></ng-icon>
-        </div>
-
-        <!-- Project Three Preview - horizontal expansion (changed from vertical) -->
-        <div
-          class="relative overflow-hidden h-48 w-24 cursor-pointer group border border-white transition-all duration-300 ease-in-out hover:w-44"
-        >
-          <!-- Static preview image -->
-          <div
-            class="h-full w-full bg-black flex items-center justify-center text-white"
-          >
-            <p class="text-lg font-thin">Project Three</p>
-          </div>
-
-          <!-- Video that appears on hover -->
-          <video
-            class="absolute top-0 left-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            src="assets/projects/project3.mp4"
-            muted
-            loop
-            (mouseenter)="playVideo($event)"
-            (mouseleave)="pauseVideo($event)"
-          ></video>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
