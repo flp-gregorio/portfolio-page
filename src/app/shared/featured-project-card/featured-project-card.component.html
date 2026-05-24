@@ -1,0 +1,21 @@
+<div class="group cursor-pointer relative" (click)="cardClick.emit(project)">
+  <div class="relative overflow-hidden aspect-video border border-white/10 bg-white/5 mb-6 group-hover:border-purple-500/50 transition-all duration-500">
+      <div class="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+      <img [src]="project.featuredUrl ? project.featuredUrl : project.logoUrl" [alt]="project.name" class="w-full h-full object-cover transform transition-transform duration-700 ease-out" />
+  </div>
+  
+  <div class="flex justify-between items-start">
+      <div>
+          <h3 class="text-3xl font-bold mb-2 group-hover:text-purple-500 transition-colors">{{ project.name }}</h3>
+          <div class="flex gap-2">
+              <span *ngFor="let icon of project.icons.slice(0, 3)" class="text-xs text-gray-500 border border-white/10 px-2 py-1 flex items-center gap-1">
+                  <ng-icon [name]="icon"></ng-icon>
+              </span>
+              <span *ngIf="project.icons.length > 3" class="text-xs text-gray-500 py-1">+{{ project.icons.length - 3 }}</span>
+          </div>
+      </div>
+      <div class="hidden md:block opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+            <span class="text-xs font-bold tracking-widest text-purple-500 border border-purple-500 px-4 py-2">VIEW DETAILS</span>
+      </div>
+  </div>
+</div>

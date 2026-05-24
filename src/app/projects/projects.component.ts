@@ -21,10 +21,13 @@ import { boxMoon } from '@ng-icons/boxicons/regular';
 import { boxCodeAlt } from '@ng-icons/boxicons/regular';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { Project, ProjectService } from '../project.service';
+import { SectionLayoutComponent } from '../shared/section-layout/section-layout.component';
+import { FeaturedProjectCardComponent } from '../shared/featured-project-card/featured-project-card.component';
+import { MinorProjectCardComponent } from '../shared/minor-project-card/minor-project-card.component';
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule, NgIcon, NavbarComponent],
+  imports: [CommonModule, NgIcon, SectionLayoutComponent, FeaturedProjectCardComponent, MinorProjectCardComponent],
   providers: [
     provideIcons({
       boxAngularLogo,

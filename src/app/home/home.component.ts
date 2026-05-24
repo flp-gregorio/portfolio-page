@@ -1,130 +1,75 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, OnDestroy, CUSTOM_ELEMENTS_SCHEMA, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { boxGitLogo } from '@ng-icons/boxicons/logos';
-import { NgIcon, provideIcons } from '@ng-icons/core';
 import { Project, ProjectService } from '../project.service';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { boxCodeAlt, boxMobileAlt, boxGitPullRequest } from '@ng-icons/boxicons/regular';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, NgIcon, RouterModule],
+  imports: [CommonModule, RouterModule, NgIcon],
   providers: [
-    provideIcons({
-      boxGitLogo,
-    }),
+    provideIcons({ boxCodeAlt, boxMobileAlt, boxGitPullRequest })
   ],
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HomeComponent implements AfterViewInit, OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy {
   projects: Project[] = [];
-  isLoading = true;
+  intervalId: any;
 
-  @ViewChild('mainWrapper') mainWrapper!: ElementRef;
-  @ViewChild('heroTextContainer') heroTextContainer!: ElementRef;
-  @ViewChild('felipeText') felipeText!: ElementRef;
-  @ViewChild('gregorioText') gregorioText!: ElementRef;
-  @ViewChild('sidebarContent') sidebarContent!: ElementRef;
-  @ViewChild('projectsContent') projectsContent!: ElementRef;
-
-  private mm: gsap.MatchMedia | null = null;
-  private timeline: gsap.core.Timeline | null = null;
-  private isBrowser: boolean;
-
-  constructor(
-    private projectService: ProjectService,
-    @Inject(PLATFORM_ID) platformId: Object
-  ) {
+  constructor(private projectService: ProjectService, @Inject(PLATFORM_ID) private platformId: Object) {
     this.projects = this.projectService.getProjects().slice(0, 3);
-    this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  ngAfterViewInit(): void {
-    if (!this.isBrowser) return;
-
-    gsap.registerPlugin(ScrollTrigger);
-    this.mm = gsap.matchMedia();
-
-    setTimeout(() => {
-      this.initAnimations();
-      this.isLoading = false;
-    }, 500);
+  ngOnInit() {
+    this.startCarousel();
   }
 
-  private initAnimations(): void {
-    // Initial States
-    gsap.set(this.sidebarContent.nativeElement, { opacity: 0, y: 50 });
-    gsap.set(this.projectsContent.nativeElement, { opacity: 0, x: 50 });
+  ngOnDestroy() {
+    this.stopCarousel();
+  }
 
-    this.mm?.add(
-      {
-        isDesktop: '(min-width: 768px)',
-        isMobile: '(max-width: 767px)',
-      },
-      (context) => {
-        let { isMobile } = context.conditions as { isMobile: boolean };
+  startCarousel() {
+    if (isPlatformBrowser(this.platformId) && !this.intervalId) {
+      // Automatically shuffle the carousel every 7 seconds only on the browser
+      this.intervalId = setInterval(() => {
+        this.rotateCarousel();
+      }, 7000);
+    }
+  }
 
-        this.timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: this.mainWrapper.nativeElement,
-            start: 'top top',
-            end: '+=2000',
-            scrub: 1,
-            pin: true,
-            anticipatePin: 1,
-          },
-        });
+  stopCarousel() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+  }
 
-        const targetFontSize = isMobile ? '3rem' : '6rem';
-        const targetTop = isMobile ? '5%' : '2rem';
-        const targetLeft = isMobile ? '5%' : '2rem';
-
-        this.timeline
-          .to(
-            [this.felipeText.nativeElement, this.gregorioText.nativeElement],
-            {
-              fontSize: targetFontSize,
-              duration: 2,
-              ease: 'power2.inOut',
-            },
-            0
-          )
-          .to(
-            this.heroTextContainer.nativeElement,
-            {
-              top: targetTop,
-              left: targetLeft,
-              xPercent: 0,
-              yPercent: 0,
-              x: 0,
-              y: 0,
-              duration: 2,
-              ease: 'power2.inOut',
-            },
-            0
-          )
-
-          .to(
-            this.sidebarContent.nativeElement,
-            { opacity: 1, y: 0, duration: 1, ease: 'power2.out' },
-            1
-          )
-          .to(
-            this.projectsContent.nativeElement,
-            { opacity: 1, x: 0, duration: 1.5, ease: 'power2.out' },
-            1.2
-          );
+  rotateCarousel() {
+    if (this.projects.length > 1) {
+      const first = this.projects.shift();
+      if (first) {
+        this.projects.push(first);
       }
-    );
+    }
   }
 
-  ngOnDestroy(): void {
-    if (this.isBrowser) {
-      this.mm?.revert();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+  trackByName(index: number, project: Project) {
+    return project.name;
+  }
+
+  getCardClasses(index: number): string {
+    const base = 'absolute inset-0 bg-neutral-950 border transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] shadow-2xl overflow-hidden ';
+    
+    if (index === 0) {
+      return base + 'z-30 transform translate-y-0 scale-100 border-white/20 hover:-translate-y-4 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]';
+    } else if (index === 1) {
+      return base + 'z-20 transform translate-y-8 scale-95 border-white/10 brightness-75';
+    } else {
+      return base + 'z-10 transform translate-y-16 scale-90 border-white/5 brightness-50';
     }
   }
 }

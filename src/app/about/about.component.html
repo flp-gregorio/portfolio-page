@@ -1,22 +1,19 @@
 <div class="min-h-screen bg-black text-white selection:bg-purple-500 selection:text-white pb-20 overflow-x-hidden font-sans">
   
-    <!-- Navbar (Simplified & Premium) -->
-    <app-navbar></app-navbar>
-
   <!-- Hero Section -->
   <section class="min-h-screen flex flex-col justify-center relative px-6 md:px-12 pt-32 pb-20">
-    <div class="max-w-[95vw]">
-      <h1 class="font-black text-[14vw] leading-[0.85] tracking-tighter animate-slide-up">
+    <div class="max-w-full px-4">
+      <h1 class="font-black text-9xl leading-none tracking-tighter animate-slide-up">
         FELIPE
       </h1>
       <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-12 mt-2 animate-slide-up delay-100">
-        <h1 class="font-black text-[14vw] leading-[0.85] tracking-tighter text-transparent" style="-webkit-text-stroke: 1px rgba(255,255,255,0.8); color: transparent;">
+        <h1 class="font-black text-9xl leading-none tracking-tighter text-transparent" style="-webkit-text-stroke: 1px rgba(255,255,255,0.8); color: transparent;">
           GREGORIO
         </h1>
         <div class="md:pb-4 max-w-md animate-fade-in delay-300">
-           <h2 class="text-purple-500 font-bold tracking-wide text-sm mb-4">FULL STACK DEVELOPER</h2>
+           <h2 class="text-purple-500 font-bold tracking-wide text-sm mb-4">DEVELOPER & MODDER</h2>
            <p class="text-gray-400 text-lg leading-relaxed font-light">
-             Computer Science student based in Brazil. Passionate about gaming, creative technologies, and building intuitive digital experiences.
+             Computer Science student based in Brazil. Passionate about gaming, game modding, creative technologies, and building intuitive digital experiences.
            </p>
         </div>
       </div>
@@ -24,17 +21,11 @@
   </section>
 
   <!-- Main Content Grid -->
-  <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
     
     <!-- Background Section -->
-    <section class="grid grid-cols-1 md:grid-cols-12 gap-12 py-32 border-t border-white/10">
-      <div class="md:col-span-4 relative">
-        <div class="sticky top-32">
-          <span class="text-purple-500 font-bold tracking-widest text-xs mb-3 block">01</span>
-          <h2 class="text-4xl font-black tracking-tighter">BACKGROUND</h2>
-        </div>
-      </div>
-      <div class="md:col-span-8 space-y-8 text-xl text-gray-300 font-light leading-relaxed animate-slide-up delay-200">
+    <app-section-layout sectionNumber="01" sectionTitle="BACKGROUND">
+      <div class="space-y-8 text-xl text-gray-300 font-light leading-relaxed">
         <p>
           My journey in programming began when I started modding games as a hobby, which eventually led me to pursue a formal education in computer science.
         </p>
@@ -45,80 +36,60 @@
           I approach each project with a focus on clean code, performance optimization, and user-centered design principles. Whether I'm building web applications or creating game mods, I strive to deliver solutions that are both technically sound and enjoyable to use.
         </p>
       </div>
-    </section>
+    </app-section-layout>
 
     <!-- Education Section -->
-    <section class="grid grid-cols-1 md:grid-cols-12 gap-12 py-32 border-t border-white/10">
-      <div class="md:col-span-4 relative">
-        <div class="sticky top-32">
-          <span class="text-purple-500 font-bold tracking-widest text-xs mb-3 block">02</span>
-          <h2 class="text-4xl font-black tracking-tighter">EDUCATION</h2>
-        </div>
-      </div>
-      <div class="md:col-span-8">
-        <div class="group border border-white/10 p-10 hover:border-purple-500/50 bg-white/5 hover:bg-white/10 transition-all duration-500 ease-out backdrop-blur-sm">
+    <app-section-layout sectionNumber="02" sectionTitle="EDUCATION">
+        <div class="group border border-white/10 p-10 hover:border-purple-500/50 bg-white/5 hover:bg-white/10 transition-all duration-500 ease-out">
             <h3 class="text-3xl font-bold text-white mb-2">Bachelor of Computer Science</h3>
             <p class="text-purple-400 mb-8 font-medium">Universidade Federal de Itajubá • 2020 - 2025</p>
             
             <h4 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-white/10 pb-2 w-fit">Key Coursework</h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8 text-gray-300">
-              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>Data Structures</div>
-              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>Algorithms</div>
-              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>Web Development</div>
-              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>Database Systems</div>
-              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>Software Engineering</div>
-              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>Computer Graphics</div>
+              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500"></span>Data Structures</div>
+              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500"></span>Algorithms</div>
+              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500"></span>Web Development</div>
+              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500"></span>Database Systems</div>
+              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500"></span>Software Engineering</div>
+              <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-purple-500"></span>Computer Graphics</div>
             </div>
         </div>
-      </div>
-    </section>
+    </app-section-layout>
 
     <!-- Interests Section -->
-    <section class="grid grid-cols-1 md:grid-cols-12 gap-12 py-32 border-t border-white/10">
-       <div class="md:col-span-4 relative">
-        <div class="sticky top-32">
-          <span class="text-purple-500 font-bold tracking-widest text-xs mb-3 block">03</span>
-          <h2 class="text-4xl font-black tracking-tighter">INTERESTS</h2>
-        </div>
-      </div>
-      <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <app-section-layout sectionNumber="03" sectionTitle="INTERESTS">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
          <!-- Cards -->
-         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-[1.02] bg-black">
+         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-105 bg-black">
             <h3 class="font-bold text-white text-xl mb-3 group-hover:text-purple-500 transition-colors">Game Development</h3>
             <p class="text-sm text-gray-400 leading-relaxed">Creating interactive experiences and gameplay mechanics</p>
          </div>
-         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-[1.02] bg-black">
+         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-105 bg-black">
             <h3 class="font-bold text-white text-xl mb-3 group-hover:text-purple-500 transition-colors">Game Modding</h3>
             <p class="text-sm text-gray-400 leading-relaxed">Extending and enhancing existing games with custom content</p>
          </div>
-         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-[1.02] bg-black">
+         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-105 bg-black">
             <h3 class="font-bold text-white text-xl mb-3 group-hover:text-purple-500 transition-colors">Web Development</h3>
             <p class="text-sm text-gray-400 leading-relaxed">Building responsive, interactive web applications</p>
          </div>
-         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-[1.02] bg-black">
+         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-105 bg-black">
             <h3 class="font-bold text-white text-xl mb-3 group-hover:text-purple-500 transition-colors">Photography</h3>
             <p class="text-sm text-gray-400 leading-relaxed">Capturing moments and creating visual stories</p>
          </div>
-         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-[1.02] bg-black">
+         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-105 bg-black">
             <h3 class="font-bold text-white text-xl mb-3 group-hover:text-purple-500 transition-colors">UI/UX Design</h3>
             <p class="text-sm text-gray-400 leading-relaxed">Crafting intuitive and visually appealing interfaces</p>
          </div>
-         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-[1.02] bg-black">
+         <div class="p-8 border border-white/10 hover:border-purple-500 transition-all duration-300 group hover:scale-105 bg-black">
             <h3 class="font-bold text-white text-xl mb-3 group-hover:text-purple-500 transition-colors">Open Source</h3>
             <p class="text-sm text-gray-400 leading-relaxed">Contributing to and building community-driven projects</p>
          </div>
       </div>
-    </section>
+    </app-section-layout>
 
     <!-- Contact Section -->
-    <section class="grid grid-cols-1 md:grid-cols-12 gap-12 py-32 border-t border-white/10">
-       <div class="md:col-span-4 relative">
-        <div class="sticky top-32">
-          <span class="text-purple-500 font-bold tracking-widest text-xs mb-3 block">04</span>
-          <h2 class="text-4xl font-black tracking-tighter">GET IN TOUCH</h2>
-        </div>
-      </div>
-      <div class="md:col-span-8 flex flex-col gap-2">
+    <app-section-layout sectionNumber="04" sectionTitle="GET IN TOUCH">
+      <div class="flex flex-col gap-2">
          <a href="mailto:felipealvesgregorio01&#64;gmail.com" class="group flex items-center justify-between border-b border-white/10 py-8 hover:border-purple-500 transition-colors">
            <span class="text-3xl md:text-5xl font-black text-gray-500 group-hover:text-white transition-colors">EMAIL</span>
            <span class="text-gray-500 group-hover:text-purple-500 transition-colors opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 duration-300">↗</span>
@@ -136,10 +107,10 @@
            <span class="text-gray-500 group-hover:text-purple-500 transition-colors opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 duration-300">↗</span>
          </a>
       </div>
-    </section>
+    </app-section-layout>
 
     <!-- Footer -->
-    <footer class="text-center text-[10px] font-bold tracking-[0.2em] text-gray-600 py-12 border-t border-white/10 uppercase">
+    <footer class="text-center text-xs font-bold tracking-widest text-gray-600 py-12 border-t border-white/10 uppercase">
        <p>COPYRIGHT © 2025 ALL RIGHTS RESERVED • © 2010-2025</p>
     </footer>
   </div>
