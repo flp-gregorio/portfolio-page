@@ -1,20 +1,18 @@
-import { Component, OnInit, OnDestroy, CUSTOM_ELEMENTS_SCHEMA, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { Project, ProjectService } from '../project.service';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { boxCodeAlt, boxMobileAlt, boxGitPullRequest } from '@ng-icons/boxicons/regular';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterModule, NgIcon],
+  imports: [CommonModule, NgIcon],
   providers: [
     provideIcons({ boxCodeAlt, boxMobileAlt, boxGitPullRequest })
   ],
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomeComponent implements OnInit, OnDestroy {
   projects: Project[] = [];
