@@ -1,63 +1,41 @@
 # Felipe Gregorio - Portfolio
 
-A premium, responsive portfolio website built with **Angular 19**, designed to showcase projects and skills with extensive use of animations and modern aesthetics.
+A modern, high-performance portfolio website built to showcase software development projects, experience, and skills. Designed with a focus on rich aesthetics, smooth micro-animations, and an immersive user experience.
 
-## Tech Stack
+## Live Site
+🌍 **[Deployed on Vercel](#)** *(Replace this with your live Vercel URL)*
 
-- **Framework**: Angular 19 (Standalone Components)
-- **Styling**: Tailwind CSS
-- **Animations**: GSAP (GreenSock Animation Platform) + ScrollTrigger
-- **Icons**: NgIcons (BoxIcons)
+---
 
-## Features
+## 🛠️ Technology Stack
 
-- **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile devices.
-- **Interactive Animations**:
-  - Scroll-driven text transformations using GSAP ScrollTrigger.
-  - Smooth reveal animations for content.
-  - Glassmorphism effects and hover transitions.
-- **Project Showcase**:
-  - Featured projects with large visual previews.
-  - "Lab & Mods" section for smaller experiments.
-  - Detailed modal view for deep dives into specific projects.
-- **Premium Aesthetic**: Dark mode interface with curated typography and color palette.
+This project leverages a modern, cutting-edge tech stack focused on performance, SEO, and developer experience.
 
-## Getting Started
+### Core Framework
+* **[Angular 19](https://angular.dev/)**: Utilized for its robust component-based architecture and powerful new reactivity features.
+* **Angular SSR (Server-Side Rendering)**: Ensures lightning-fast initial load times, perfect SEO scores, and a seamless user experience by pre-rendering routes on the server.
+* **TypeScript**: Provides strong typing for maintainable, scalable, and error-free code.
 
-### Prerequisites
+### Styling & UI
+* **[Tailwind CSS v4](https://tailwindcss.com/)**: Used as the primary styling engine. Tailwind's utility-first approach paired with its new v4 engine allows for rapid, highly-customized, and responsive UI development without bloated CSS files.
+* **PostCSS**: Processes the styling pipeline for optimized browser compatibility.
+* **[Ng-Icons](https://ng-icons.github.io/ng-icons/)**: Implemented for clean, lightweight, and scalable SVG icons (specifically the Boxicons library) without relying on heavy external font-icon packages.
+* **Custom Animations**: Pure CSS-driven micro-animations (fade-ins, smooth translations, floating waves) for an interactive, "alive" feel without JavaScript overhead.
 
-- Node.js (Latest LTS recommended)
-- Angular CLI
+### Fonts & Assets
+* **[Inter Font](https://fonts.google.com/specimen/Inter)**: A modern, highly legible geometric sans-serif typeface provided by Google Fonts.
+* **[Model Viewer](https://modelviewer.dev/)**: Integrated via CDN to support potential interactive 3D elements natively in the browser.
 
-### Installation
+### Infrastructure & Deployment
+* **[Vercel](https://vercel.com/)**: Deployed on Vercel's Edge Network for zero-config Server-Side Rendering support, automatic CI/CD pipelines, and global content delivery.
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+---
 
-### Development Server
+## 🏗️ Architecture Highlights
 
-Run the development server:
+* **Standalone Components**: Built entirely using Angular's standalone components API, removing the need for `NgModules` and streamlining the dependency tree.
+* **Dynamic Routing**: Clean, semantic routing for single-page application navigation while retaining SSR benefits for deep links.
+* **Responsive Layouts**: Mobile-first design principles ensure the application looks perfect on everything from small phones to ultrawide desktop monitors.
 
-```bash
-ng serve
-```
-Navigate to `http://localhost:4200/`. The app will reload automatically if you change any of the source files.
-
-### Build
-
-To build the project for production:
-
-```bash
-ng build
-```
-The build artifacts will be stored in the `dist/` directory.
-
-## License
-
-All rights reserved. © 2025 Felipe Gregorio.
+## 📄 License
+This project is open-source and available under the MIT License.
