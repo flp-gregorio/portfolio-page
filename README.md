@@ -3,7 +3,7 @@
 A modern, high-performance portfolio website built to showcase software development projects, experience, and skills. Designed with a focus on rich aesthetics, smooth micro-animations, and an immersive user experience.
 
 ## Live Site
-🌍 **[Deployed on Vercel](#)** *(Replace this with your live Vercel URL)*
+🌍 **[Deployed on Vercel](https://felipegregorio.vercel.app/)**
 
 ---
 
