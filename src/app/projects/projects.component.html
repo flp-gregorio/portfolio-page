@@ -68,14 +68,14 @@
                             <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Tech Stack</h3>
                             <div class="flex gap-3 flex-wrap">
                                 <div *ngFor="let icon of selectedProject.icons" class="group/icon relative p-3 border border-white/10 bg-white/5 hover:border-purple-500 hover:text-purple-500 transition-colors" title="{{icon}}">
-                                     <ng-icon [name]="icon" size="24"></ng-icon>
+                                     <ng-icon [name]="icon" size="48"></ng-icon>
                                 </div>
                             </div>
                         </div>
                     </div>
             
-                    <div *ngIf="selectedProject.githubUrls && selectedProject.githubUrls.length > 0" class="mt-8 pt-6 border-t border-white/10 flex flex-col gap-3">
-                        <a *ngFor="let link of selectedProject.githubUrls" [href]="link.url" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-white text-black px-6 py-4 font-bold hover:bg-purple-500 hover:text-white transition-all duration-300 tracking-wider text-sm">
+                    <div *ngIf="selectedProject.githubUrls && selectedProject.githubUrls.length > 0" class="mt-6 pt-6 border-t border-white/10 flex flex-col gap-3">
+                        <a *ngFor="let link of selectedProject.githubUrls" [href]="link.url" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-white text-black px-4 py-4 font-bold hover:bg-purple-500 hover:text-white transition-all duration-300 tracking-wider text-sm">
                            <ng-icon name="boxGitLogo" size="1.2em"></ng-icon>
                            VIEW {{ link.name | uppercase }}
                         </a>
