@@ -19,7 +19,7 @@ export class ProjectService {
         {
             name: 'Nomini',
             icons: ['boxReactLogo', 'boxTypescriptLogo', 'boxTailwindCssLogo', 'boxNodejsLogo'],
-            description: 'A "Game of the Year" voting application where users can vote for nominees in various categories. Built with React and TypeScript on the frontend, and a Node.js API backend. It features real-time updates and user authentication.',
+            description: 'A comprehensive "Game of the Year" voting platform designed for gaming communities. It enables users to vote for games across multiple categories of The Game Awards in real-time, with accurate results being displayed once the event ends and a global and per-edition leaderboard is generated. Built with React and Node.js.',
             logoUrl: "/nomini-featured.png",
             featuredUrl: "/nomini.png",
             githubUrls: [
@@ -122,7 +122,7 @@ export class ProjectService {
         {
             name: 'Oath of Penitence - Paladin Subclass',
             icons: ['boxMoon', 'boxCodeAlt'],
-            description: 'Lightning flows through your veins, use your rage to rain it onto your enemies. A Lightning Vessel is a brute and a monster of battle. Inspired by Steinhardt\'s Guide to the Eldritch Hunt.',
+            description: 'Embrace the burden of your sins and unleash righteous fury. The Oath of Penitence Paladin uses their suffering to smite foes and protect allies. Inspired by Steinhardt\'s Guide to the Eldritch Hunt.',
             logoUrl: 'https://staticdelivery.nexusmods.com/mods/3474/images/21694/21694-1772897664-1029598442.png',
             link: 'https://www.nexusmods.com/baldursgate3/mods/21694'
         },
